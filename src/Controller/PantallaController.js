@@ -8,9 +8,9 @@ class PantallaController{
 
     }
 
-    // pintar(){
-    //     this.logic.pintarPersonajes;
-    // }
+    pintar(){
+         this.logic.pintarPersonajes();
+   }
 
 
 }

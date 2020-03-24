@@ -5,13 +5,12 @@ class Principe extends Personaje{
         super(app,posX, posY);
 
     
-    this.imagenPrincipe = this.app.loadImage('./imagenes/principe.png');
-    
-
+         this.imagenPrincipe = loadImage('./imagenes/principe.png');
     }
 
     pintarPrincipe(){
-      this.app.image(this.imagenPrincipe);
+     //image(this.imagenPrincipe);
+     rect(100,100,100,100);
 
     }
 

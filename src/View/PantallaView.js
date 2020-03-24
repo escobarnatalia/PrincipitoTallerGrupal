@@ -7,7 +7,7 @@ class PantallaView{
     }
 
     pintarView(){
-        this.pantallaController.pintar;
+        this.pantallaController.pintar();
     }
 
 

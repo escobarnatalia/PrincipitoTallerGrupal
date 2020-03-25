@@ -2,7 +2,7 @@ class PantallaView{
 
     constructor(){
     this.pantallaController=new PantallaController();
-
+    
 
     }
 

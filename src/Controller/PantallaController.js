@@ -9,7 +9,9 @@ class PantallaController{
     }
 
     pintar(){
+        this.logic.pintarEspacio();
          this.logic.pintarPersonajes();
+         
    }
 
 

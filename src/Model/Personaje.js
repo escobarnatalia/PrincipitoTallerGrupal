@@ -1,8 +1,7 @@
 class Personaje{
 
-    constructor(app,posX,posY){
-        this.app=app;
- 
+    constructor(posX,posY){
+        
     this.posX=posX;
     this.posY=posY;
   

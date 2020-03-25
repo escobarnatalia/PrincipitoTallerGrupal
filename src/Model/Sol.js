@@ -1,11 +1,5 @@
-class Cuento{
-
-
-
+class Sol{
     constructor(){
- 
-
+        
     }
-
-
 }

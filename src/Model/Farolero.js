@@ -1,13 +1,18 @@
 class Farolero extends Personaje{
 
-    constructor(app,posX,posY){
-        super(app,posX,posY);
-        this.imagenFarolero = loadImage('./imagenes/farolero.png');
+    constructor(posX,posY){
+        super(posX,posY);
+        this.imagenFarolero = loadImage('./imagenes/faroleroUno.png');
     }
 
     pintarFarolero(){
-      //image(this.imagenFarolero);
-      ellipse(200,100,100,100);
+      image(this.imagenFarolero,300,200);
+     
+    }
+
+
+    cambioFarolero(){
+      
     }
 
 

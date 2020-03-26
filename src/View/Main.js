@@ -1,5 +1,5 @@
 
-let pantalla,pantallaFinal,pantallaTitle;
+let pantalla,pantallaDownload,pantallaTitle;
 let bg,screen;
 let faroleroChange;
 
@@ -17,6 +17,12 @@ function setup() {
     bg=loadImage('./imagenes/background.png');
     pantalla = new PantallaView();
     pantallaTitle = new PantallaUnoView();
+    pantallaDownload = new PantallaFinalView();
+
+
+
+
+
 }
 
 function draw() {
@@ -26,12 +32,14 @@ function draw() {
     switch(screen){
         case 0 :
             
-    // pantallaTitle.pintarTitulo();
+         pantallaTitle.pintarTitulo();
         break;
         case 1 :
             pantalla.pintarView();
             break;
       case 2 :
+          pantallaDownload.pintarView();
+          
 
       break;
     }
@@ -44,8 +52,9 @@ function draw() {
 
 
 function mouseClicked(){
-    if(dist(mouseX,mouseY,300,50)<100){
-        
+    if(screen=2&&dist(mouseX,mouseY,600,660)<100){
+        pantalla.textoView();
+        return;
         
     }
 

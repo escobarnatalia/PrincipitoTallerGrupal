@@ -8,6 +8,11 @@ class PantallaView{
 
     pintarView(){
         this.pantallaController.pintar();
+        this.pantallaController.text();
+    }
+
+    textoView(){
+        this.pantallaController.textDownload();
     }
 
 

@@ -1,7 +1,7 @@
 class PantallaController{
 
     constructor(){
-     this.logic=new Logica()
+     this.logica=new Logica();
 
      
 
@@ -9,13 +9,20 @@ class PantallaController{
     }
 
     pintar(){
-        this.logic.pintarEspacio();
-         this.logic.pintarPersonajes();
+        this.logica.pintarEspacio();
+         this.logica.pintarPersonajes();
          
    }
 
+   text(){
+       this.logica.lecturaCuento();
+   }
 
+   textDownload(){
+    this.logica.downloadCuento();
+   }
 
+  
 
 
 

@@ -1,8 +1,8 @@
 
-let pantalla;
-let pantallaFinal;
-let bg;
-let screen;
+let pantalla,pantallaFinal,pantallaTitle;
+let bg,screen;
+let faroleroChange;
+
 
 
 
@@ -16,7 +16,7 @@ function setup() {
      screen=1;
     bg=loadImage('./imagenes/background.png');
     pantalla = new PantallaView();
-    pantallaTitle = new PantallaDosView();
+    pantallaTitle = new PantallaUnoView();
 }
 
 function draw() {
@@ -40,4 +40,13 @@ function draw() {
 
    
    
+}
+
+
+function mouseClicked(){
+    if(dist(mouseX,mouseY,300,50)<100){
+        
+        
+    }
+
 }

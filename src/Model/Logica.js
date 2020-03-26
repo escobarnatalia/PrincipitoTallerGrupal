@@ -1,4 +1,4 @@
-let farolero,principe,planeta;
+let farolero,principe,planeta,sol,luna,farol;
 
 class Logica{
   
@@ -8,6 +8,8 @@ class Logica{
         this.principe = new Principe(0,0);
         this.planeta = new Planeta();
         this.farol= new Farol();
+        this.sol= new Sol();
+        this.luna= new Luna();
 
 
     }
@@ -16,6 +18,8 @@ class Logica{
 
     pintarEspacio(){
         this.planeta.pintarPlaneta();
+        this.sol.pintarSol();
+        this.luna.pintarLuna();
         
       
      }
@@ -27,6 +31,8 @@ class Logica{
         
 
      }
+
+     
 
 
 }

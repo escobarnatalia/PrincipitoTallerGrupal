@@ -15,4 +15,13 @@ class PantallaController{
    }
 
 
+
+
+
+
+    mouseClick(){
+
+    }    
+
+
 }

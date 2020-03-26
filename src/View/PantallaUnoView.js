@@ -1,5 +1,5 @@
 let titulo;
-class PantallaDosView{
+class PantallaUnoView{
 
     constructor(){
         this.titulo=loadImage('./imagenes/title.png');

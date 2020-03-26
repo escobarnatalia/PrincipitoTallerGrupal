@@ -6,7 +6,7 @@ this.planet=loadImage('./imagenes/planeta.png');
 }
 
 pintarPlaneta(){
-    image(this.planet,160,300);
+    image(this.planet,200,300);
 }
 
 

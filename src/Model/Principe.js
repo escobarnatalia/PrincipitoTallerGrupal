@@ -9,11 +9,12 @@ class Principe extends Personaje{
     }
 
     pintarPrincipe(){
-     image(this.imagenPrincipe,100,300);
+     image(this.imagenPrincipe,this.posX,this.posY);
      
     }
 
     movPrincipe(){
+        
         
     }
 }

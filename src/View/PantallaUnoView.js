@@ -8,7 +8,7 @@ class PantallaUnoView{
     }
 
    pintarTitulo(){
-       image(this.titlo,0,50);
+       image(this.titulo,0,50);
    }
 
 

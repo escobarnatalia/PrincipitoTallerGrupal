@@ -9,11 +9,12 @@ class Personaje{
 
     }
 
+   
     getPosX(){
-        return this.pos.x;
+        return this.posX;
     }
     getPosY(){
-        return this.pos.y;
+        return this.posY;
     }
     setPosX(posX){
         this.posX = posX;

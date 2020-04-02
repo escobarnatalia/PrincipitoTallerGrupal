@@ -16,6 +16,18 @@ class PantallaView{
     }
 
 
+    validarClicks(){
+        this.pantallaController.validarInteraccion();
+        this.pantallaController.cambiarFarolero();
+        this.pantallaController.validanteMovimiento();
+        this.pantallaController.cambiarFarol();
+    }
+
+    validarEspacio(){
+        this.pantallaController.validanteMovimientoEspacio();
+    }
+
+
 
 
 }

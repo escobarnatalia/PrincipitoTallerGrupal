@@ -1,9 +1,9 @@
-class PantallaView{
+class PantallaView {
 
-    constructor(){
-    this.pantallaController=new PantallaController();
-    this.star=loadImage('./imagenes/stars.png')
-    
+    constructor() {
+        this.pantallaController = new PantallaController();
+        this.star = loadImage('./imagenes/stars.png')
+
 
     }
 
@@ -12,47 +12,53 @@ class PantallaView{
 
 
 
-    pintarView(){
-       
-       
+    pintarView() {
+
+
         this.pantallaController.pintar();
         this.pantallaController.text();
 
     }
 
-    pintarViewEspacio(){
-        image(this.star,0,0);
+    pintarViewEspacio() {
+        image(this.star, 0, 0);
         this.pantallaController.pintarEspacio();
-        }
+    }
 
 
-    alumbrado(){
+    alumbrado() {
         this.pantallaController.objAlumbrado();
     }
 
 
 
 
-  
 
-    pintarEstrellas(){
-        
+
+    pintarEstrellas() {
+
     }
 
 
-    textoView(){
+    textoView() {
         this.pantallaController.textDownload();
     }
 
 
-    validarClicks(){
-        
-       
+    validarClicks() {
+
+
         this.pantallaController.interacciones();
     }
 
-    validarEspacio(){
-        
+    validarFrenado() {
+
+        this.pantallaController.frenarInteracciones();
+    }
+
+
+    validarEspacio() {
+
     }
 
 

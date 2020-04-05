@@ -38,6 +38,11 @@ interacciones(){
 }
 
 
+frenarInteracciones(){
+    this.logica.frenarMovimiento();
+}
+
+
    alumbrado(){
        this.logica.alumbrado();
    }

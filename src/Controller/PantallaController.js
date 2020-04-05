@@ -9,9 +9,13 @@ class PantallaController{
     }
 
     pintar(){
-        this.logica.pintarEspacio();
-         this.logica.pintarPersonajes();
+       
+   this.logica.pintarPersonajes();
          
+   }
+
+   pintarEspacio(){
+    this.logica.pintarEspacio();
    }
 
    text(){
@@ -24,38 +28,31 @@ class PantallaController{
    }
 
 
-   validanteMovimiento(){
-      
-       this.logica.validanteCambio();
-
-   }
-
-   validanteMovimientoEspacio(){
+  
+  
+interacciones(){
+    this.logica.validarInteraccion();
     this.logica.movEspacio();
-
-   }
-
-
-    cambiarFarolero(){
-       this.logica.hablarFarolero();
-      
-   }
-   cambiarFarol(){
-   
+    this.logica.hablarFarolero();
     this.logica.cambiarFarol();
 }
 
 
-   validarInteraccion(){
-       this.logica.validarInteraccion();
+   alumbrado(){
+       this.logica.alumbrado();
    }
-  
+
+  objAlumbrado(){
+      return this.logica.getObjAlumbrado();
+  }
 
 
 
-    mouseClick(){
 
-    }    
+
+
+
+
 
 
 }

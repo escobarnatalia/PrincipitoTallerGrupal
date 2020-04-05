@@ -4,6 +4,7 @@ class Farol extends Personaje {
         this.farolApagado=loadImage('./imagenes/apagado.png');
         this.farolEncendido=loadImage('./imagenes/encendido.png');
         this.cambioFarol=true;
+        this.farolLU=loadImage('./imagenes/farolILU.png');
         
     }
 
@@ -18,6 +19,13 @@ class Farol extends Personaje {
       
         
     }
+
+
+    alumbrado(){
+        image(this.farolLU,this.posX,this.posY);
+    }
+
+
 
 
 

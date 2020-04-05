@@ -1,11 +1,11 @@
-let cuento, guia;
-let array;
-let farol2;
+
+let objAlumbrado;
 
 
 class Logica {
 
   constructor() {
+    
 
  
 
@@ -16,8 +16,15 @@ class Logica {
     this.sol = new Sol(50,50);
     this.luna = new Luna(570,50);
 
+    this.objAlumbrado=0;
+
+    
 
 
+
+
+
+    this.faroleroAlumbrado=false;
 
 
     /////
@@ -35,6 +42,8 @@ class Logica {
 
     for (let i = 0; i < this.txtCuento.length; i++) {
       this.palabras = this.txtCuento[i].split(" ");
+
+
       
     for (let i = 0; i < this.palabras.length; i++) {
       switch(this.palabras[i]){
@@ -68,18 +77,9 @@ class Logica {
       
     
  }
- 
-      
-      
-     
-         
-         
+    
     }
     
-//////SI LE DOY CLIC EN POSX DE PALABRAS CLAVES ARRAY DE LUNA DONDE VA LA LUNA SE DEBE MODIFICAR EN EL TXT 
-
-
-
   }
 
 
@@ -107,6 +107,10 @@ class Logica {
       this.sol.movimiento();
 
     }
+    if(this.validarMovLuna == true){
+      this.luna.movimiento();
+
+    }
 
     
    
@@ -116,88 +120,174 @@ class Logica {
   pintarPersonajes() {
     this.principe.pintarPrincipe();
     this.farol.pintarFarol();
+
+    if (this.faroleroAlumbrado=true){
+     
+     }else{
+
+     }
+  
+
     this.farolero.pintarFarolero();
     this.farolero.hablar();
+   
 
 
+   }
+
+
+
+
+  //HABLAR
+
+   hablarFarolero(){   
+    /////hablar
+    if (mouseX>this.farolero.getPosX()+100 && mouseY>this.farolero.getPosY()&&mouseX<this.farolero.getPosX()+250&&mouseY<this.farolero.getPosY()+250
+    &&this.farolero.getCambioFarol()==true ){
+      this.farolero.setHablarOn(1);
+      return;
+
+    
+    }
+
+    if (mouseX>this.farolero.getPosX() && mouseY>this.farolero.getPosY()+80&&mouseX<this.farolero.getPosX()+180&&mouseY<this.farolero.getPosY()+300
+    &&this.farolero.getCambioFarol()==false){
+      this.farolero.setHablarOn(2);
+      return;
+     
+   
+    }
+////quitar
+    
+    if (mouseX>this.farolero.getPosX()+100 && mouseY>this.farolero.getPosY()&&mouseX<this.farolero.getPosX()+250&&mouseY<this.farolero.getPosY()+250
+){
+      print("fuckyou");
+      
+    
+      return;
+    }
   
-    
-    // if (this.validarPrincipito == true) {
-    //     this.principe.pintarPrincipe();
-    // }
+
+
 
 
    }
-
-
-
-   hablarFarolero(){
-    if (dist( mouseX, mouseY,this.farolero.getPosX()+50,this.farolero.getPosY()) < 100&&this.farolero.getCambioHablar()==true ){
-      this.farolero.setCambioHablar(false);
-      return;
-
-    
-    }
-    if (dist( mouseX, mouseY,this.farolero.getPosX()+50,this.farolero.getPosY()) < 100&&this.farolero.getCambioHablar()==false ){
-      this.farolero.setCambioHablar(true);
-      return;
-
-   
-    }
-
-   }
-
+////CAMBIO FAROL
    cambiarFarol(){
-    if (dist( mouseX, mouseY,this.farol.getPosX()+50,this.farol.getPosY()) < 100&&this.farol.getCambioFarol()==true ){
+    if ( mouseX>this.farol.getPosX() && mouseY>this.farol.getPosY()&&mouseX<this.farol.getPosX()+70&&mouseY<this.farol.getPosY()+100
+    &&this.farol.getCambioFarol()==true ){
       this.farol.setCambioFarol(false);
-      this.farolero.setCambioFarol(false);
-      
+      this.farolero.setCambioFarol(false);  
       return;
-
-    
     }
-    if (dist( mouseX, mouseY,this.farol.getPosX()+50,this.farol.getPosY()) < 100&&this.farol.getCambioFarol()==false ){
+    if (mouseX>this.farol.getPosX() && mouseY>this.farol.getPosY()&&mouseX<this.farol.getPosX()+70&&mouseY<this.farol.getPosY()+100&&this.farol.getCambioFarol()==false ){
       this.farol.setCambioFarol(true);
-      this.farolero.setCambioFarol(true);
-      
+      this.farolero.setCambioFarol(true);  
       return;
-
-   
     }
-
    }
 
 
 
-
+// MOVIMIENTO SOL Y LUNA
   movEspacio() {
 
     if (dist( mouseX, mouseY,this.sol.getPosX()+50,this.sol.getPosY()+30) < 100 ){
      this.validarMovSol = true;
 
     }
+  
+
+    if (dist( mouseX, mouseY,this.luna.getPosX()+50,this.luna.getPosY()+30) < 100 ){
+      this.validarMovLuna = true;
+ 
+     }
+
 
   }
 
-    validanteCambio() {
 
-  //   if (mouseX > this.farolero.posX && mouseX < this.farolero.posX + 150 &&
-  //     mouseY > this.farolero.posY && mouseY < this.farolero.posY + 340) {
 
-  //     console.log("si entra");
+  
 
-  //     this.validarCambioFarolero = true;
 
-  //   }
+
+  alumbrado(){
+
+    ///farolero
+
+   switch(this.objAlumbrado){
+     case 0:
+     this.farolthing=true;
+       this.farolero.alumbrado();
+      break;
+
+
+      case 1:
+       
+
+       break;
+
+    case 2:
+          this.farol.alumbrado();
+
+      break;
+  
+       case 3:
+        this.luna.alumbrado();
+       break;
+       
+       case 4:
+         this.sol.alumbrado();
+      break;
+
+         case 5:
+           this.principe.alumbrado();
+        break;
+
+           case 6:
+             this.planeta.alumbrado();
+
+           break;
+
+   }
 
    
+   
+  
+
+  
   }
-
-
 
 
   downloadCuento() {
-    saveStrings(this.cuento, './data/cuentodown.txt');
+    
+    this.downloadTxt = [this.palabrasClaves];
+    
+   for(let i=0; i<this.downloadTxt;i++){
+    this.downloadTxt[i] = this.palabrasClaves[0];
+   }
+   
+
+/// crear boton, poner posiciones de el
+    // if(mouseX>300 && mouseY>300+80&&mouseX<400&&mouseY<400){
+    //   saveStrings(this.downloadTxt, './data/cuentodown.txt');
+    // }
+
+  }
+
+
+ 
+
+
+
+  getObjAlumbrado(){
+    return this.objAlumbrado;
+  }
+  
+  setObjAlumbrado(objAlumbrado){
+    this.objAlumbrado=objAlumbrado;
+
   }
 
 

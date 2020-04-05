@@ -7,6 +7,10 @@ class Farolero extends Personaje{
       this.imagenFaroleroDos = loadImage('./imagenes/faroleroDos.png');
       this.cambioFarol=true;
       this.cambioHablar=true;
+      this.hablarOn=0;
+      this.sacramento=loadFont('./data/sacramento.ttf')
+      this.faroleroLU=loadImage('./imagenes/faroleroUnoILU.png');
+      this.faroleroDosLU=loadImage('./imagenes/faroleroDosILU.png');
   }
 
   pintarFarolero(){
@@ -16,32 +20,67 @@ class Farolero extends Personaje{
     image(this.imagenFaroleroDos,this.posX,this.posY);
   }
  
-
-    // switch(this.cambioFarol){
-    //   case 0:
-    //   image(this.imagenFarolero,this.posX,this.posY);
-    //   break;
-
-    //   case 1:
-    //     image(this.imagenFaroleroDos,this.posX,this.posY);
-    //     break;
-
-    // }
    
    
   }
+
+   alumbrado(){
+    image(this.faroleroLU,this.posX,this.posY);
+   
+   }
+
+
+
+
+
+
+
 
   hablar(){
-    textSize(20);
-    fill(255,0,0);
-    if(this.cambioHablar==true){
-   text("buenas dias",this.posX,this.posY);   
-    }else{
-      text("buenas noches",this.posX,this.posY);  
+    textFont('sacramento');
+    textSize(45);
+  
+
+    switch(this.hablarOn){
+      case 1: 
+     
+      if(this.cambioFarol==true){
+        fill(192, 214, 250,50);
+        noStroke();
+        rect(this.posX+230,this.posY,200,50, 20);
+        fill(252, 180, 78);
+        text("Buenos dias",this.posX+230,this.posY+40);   
+      }else{
+
+      }
+    
+       break;
+
+       case 2:
+
+      if(this.cambioFarol==false){
+        fill(192, 214, 250,50);
+        noStroke();
+        rect(this.posX+148,this.posY+10,240,50, 20);
+        fill(166, 190, 255)
+        text("Buenas noches",this.posX+150,this.posY+50);  
+       }else{
+
+ }
+
+      break;
+
+      case 3:
+        
+      break;
+
     }
+   
+    
   }
 
-
+  // if(this.cambioHablar==true){
+  // }
  
 
   getCambioFarol(){
@@ -56,6 +95,20 @@ getCambioHablar(){
 setCambioHablar(cambioHablar){
   this.cambioHablar = cambioHablar;
 }
+
+getHablarOn(){
+  return this.HablarOn;
+}
+setHablarOn(hablarOn){
+  this.hablarOn = hablarOn;
+}
+
+
+
+
+
+
+
 
 
 

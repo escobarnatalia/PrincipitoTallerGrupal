@@ -6,6 +6,7 @@ class Principe extends Personaje{
 
     
          this.imagenPrincipe = loadImage('./imagenes/principe.png');
+         this.principeLU=loadImage('./imagenes/principeILU.png');
     }
 
     pintarPrincipe(){
@@ -17,4 +18,12 @@ class Principe extends Personaje{
         
         
     }
+
+    alumbrado(){
+        image(this.principeLU,this.posX,this.posY);
+    }
+
+
+
+
 }

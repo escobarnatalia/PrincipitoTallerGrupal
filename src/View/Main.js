@@ -24,11 +24,15 @@ function setup() {
 
 
 
+
+
+
 }
 
 function draw() {
     background(0);
     image(bg, 0, 0);
+    
 
     switch (screen) {
         case 0:
@@ -36,7 +40,21 @@ function draw() {
             pantallaTitle.pintarTitulo();
             break;
         case 1:
+            pantalla.pintarViewEspacio();
+           
+            
+
+
+            if(dist(mouseX,mouseY,300,300)<100){
+                controller.objAlumbrado()==0;
+                controller.alumbrado();
+            }
+
+          
             pantalla.pintarView();
+
+         
+           
             break;
         case 2:
             pantallaDownload.pintarView();
@@ -53,6 +71,7 @@ function draw() {
 
 
 function mouseClicked() {
+    print(mouseX+" ",mouseY+" ");
     /*
     if (screen == 2 && dist(mouseX, mouseY, 600, 660) < 100) {
         pantalla.textoView();
@@ -67,6 +86,7 @@ function mousePressed() {
 
     pantalla.validarClicks();
     pantalla.validarEspacio();
+    pantalla.textoView();
     
 
 }

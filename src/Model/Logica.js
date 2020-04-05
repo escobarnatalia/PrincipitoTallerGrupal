@@ -214,10 +214,10 @@ class Logica {
     if (this.validarMovSol == true && dist(mouseX, mouseY, this.sol.getPosX() + 50, this.sol.getPosY() + 30) < 100) {
       this.validarMovSol = false;
       if (this.sol.getPosX() + 50 < 0) {
-        this.sol.setPosX() = 50;
+        this.sol.setPosX(50);
       }
-      if (this.sol.getPosX() + 50 > 800) {
-        this.sol.setPosX() = 50;
+      if (this.sol.getPosX() > 800) {
+        this.sol.setPosX(50);
       }
     }
 
@@ -225,10 +225,10 @@ class Logica {
       this.validarMovLuna = false;
 
       if (this.luna.getPosX() + 50 < 0) {
-        this.luna.setPosX() = 50;
+        this.luna.setPosX(570);
       }
-      if (this.luna.getPosX() + 50 > 800) {
-        this.luna.setPosX() = 50;
+      if (this.luna.getPosX() > 800) {
+        this.luna.setPosX(570);
       }
     }
 

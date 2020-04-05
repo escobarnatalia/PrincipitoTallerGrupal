@@ -1,55 +1,57 @@
-class PantallaController{
+class PantallaController {
 
-    constructor(){
-     this.logica=new Logica();
+    constructor() {
+        this.logica = new Logica();
 
-     
+
 
 
     }
 
-    pintar(){
-       
-   this.logica.pintarPersonajes();
-         
-   }
+    pintar() {
 
-   pintarEspacio(){
-    this.logica.pintarEspacio();
-   }
+        this.logica.pintarPersonajes();
 
-   text(){
-       this.logica.lecturaCuento();
-      
-   }
+    }
 
-   textDownload(){
-    this.logica.downloadCuento();
-   }
+    pintarEspacio() {
+        this.logica.pintarEspacio();
+    }
 
+    text() {
+        this.logica.lecturaCuento();
 
-  
-  
-interacciones(){
-    this.logica.validarInteraccion();
-    this.logica.movEspacio();
-    this.logica.hablarFarolero();
-    this.logica.cambiarFarol();
-}
+    }
+
+    textDownload() {
+        this.logica.downloadCuento();
+    }
 
 
-frenarInteracciones(){
-    this.logica.frenarMovimiento();
-}
 
 
-   alumbrado(){
-       this.logica.alumbrado();
-   }
+    interacciones() {
+        this.logica.validarInteraccion();
+        this.logica.movEspacio();
+        this.logica.hablarFarolero();
+        this.logica.cambiarFarol();
+        this.logica.cambioPlaneta();
+    }
 
-  objAlumbrado(){
-      return this.logica.getObjAlumbrado();
-  }
+
+    frenarInteracciones() {
+        this.logica.frenarMovimiento();
+        this.logica.pararPlaneta();
+    }
+
+
+    alumbrado() {
+        this.logica.alumbrado();
+    }
+
+    objAlumbrado() {
+        return this.logica.getObjAlumbrado();
+    }
 
 
 

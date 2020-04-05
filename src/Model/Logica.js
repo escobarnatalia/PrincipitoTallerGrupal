@@ -189,6 +189,20 @@ class Logica {
     }
   }
 
+  //cambio planeta
+  cambioPlaneta() {
+    if (this.planeta.getPlanetPlay == false && dist(mouseX, mouseY, this.planeta.getPosX() + 75, this.planeta.getPosY + 75) < 200) {
+
+      this.planeta.setPlanetPlay(true);
+    }
+  }
+
+  pararPlaneta() {
+    if (this.planeta.getPlanetPlay == true && dist(mouseX, mouseY, this.planeta.getPosX() + 75, this.planeta.getPosY + 75) < 200) {
+
+      this.planeta.setPlanetPlay(false);
+    }
+  }
 
 
   // MOVIMIENTO SOL Y LUNA

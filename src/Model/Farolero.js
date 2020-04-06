@@ -25,7 +25,7 @@ class Farolero extends Personaje{
   }
 
    alumbrado(){
-    image(this.faroleroLU,this.posX,this.posY);
+    image(this.faroleroLU,this.posX-5,this.posY-20);
    
    }
 

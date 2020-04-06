@@ -22,7 +22,7 @@ class Farol extends Personaje {
 
 
     alumbrado(){
-        image(this.farolLU,this.posX,this.posY);
+        image(this.farolLU,this.posX-20,this.posY-15);
     }
 
 

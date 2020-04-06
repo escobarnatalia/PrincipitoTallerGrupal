@@ -14,7 +14,7 @@ class Sol extends Espacio{
     }
 
     alumbrado(){
-        image(this.solLU,this.posX,this.posY);
+        image(this.solLU,this.posX-13,this.posY-13);
     }
 
 

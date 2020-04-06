@@ -20,7 +20,7 @@ class Principe extends Personaje{
     }
 
     alumbrado(){
-        image(this.principeLU,this.posX,this.posY);
+        image(this.principeLU,this.posX-15,this.posY-5);
     }
 
 

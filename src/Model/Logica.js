@@ -16,10 +16,6 @@ class Logica {
     this.sol = new Sol(50, 50);
     this.luna = new Luna(570, 50);
 
-    this.objAlumbrado = 0;
-
-
-
 
 
 
@@ -99,13 +95,14 @@ class Logica {
 
     this.planeta.pintarPlaneta();
 
-    if (this.farol.getCambioFarol() == false) {
-      this.sol.pintarSol();
-      this.sol.setPosX = 50;
-    }
     if (this.farol.getCambioFarol() == true) {
+      this.sol.pintarSol();
+      this.luna.setPosX(570) ;
+      
+    }
+    if (this.farol.getCambioFarol() == false) {
       this.luna.pintarLuna();
-      this.luna.setPosX = 570;
+      this.sol.setPosX(50);
     }
 
     if (this.validarMovSol == true) {
@@ -208,13 +205,13 @@ class Logica {
   // MOVIMIENTO SOL Y LUNA
   movEspacio() {
 
-    if (dist(mouseX, mouseY, this.sol.getPosX() + 50, this.sol.getPosY() + 30) < 100) {
+    if (dist(mouseX, mouseY, this.sol.getPosX() + 100, this.sol.getPosY() + 30) < 100) {
       this.validarMovSol = true;
 
     }
 
 
-    if (dist(mouseX, mouseY, this.luna.getPosX() + 50, this.luna.getPosY() + 30) < 100) {
+    if (dist(mouseX, mouseY, this.luna.getPosX() + 200, this.luna.getPosY() + 30) < 100) {
       this.validarMovLuna = true;
 
     }
@@ -249,45 +246,38 @@ class Logica {
   }
 
   alumbrado() {
-
-    ///farolero
-
-    switch (this.objAlumbrado) {
-      case 0:
-        this.farolthing = true;
-        this.farolero.alumbrado();
-        break;
-
-
-      case 1:
-
-
-        break;
-
-      case 2:
-        this.farol.alumbrado();
-
-        break;
-
-      case 3:
-        this.luna.alumbrado();
-        break;
-
-      case 4:
-        this.sol.alumbrado();
-        break;
-
-      case 5:
-        this.principe.alumbrado();
-        break;
-
-      case 6:
-        this.planeta.alumbrado();
-
-        break;
-
+    if (mouseX > this.farolero.getPosX() + 100 && mouseY > this.farolero.getPosY() && mouseX < this.farolero.getPosX() + 250 && mouseY < this.farolero.getPosY() + 250){
+      this.farolero.alumbrado();
     }
 
+    if (mouseX > this.principe.getPosX() +100 && mouseY > this.principe.getPosY() && mouseX < this.principe.getPosX() +200 && mouseY < this.principe.getPosY() + 100){
+      this.principe.alumbrado();
+    }
+
+
+    if (mouseX > this.farol.getPosX()&& mouseY > this.farol.getPosY()-30 && mouseX < this.farol.getPosX() + 70 && mouseY < this.farol.getPosY() + 100){
+      this.farol.alumbrado();
+    }
+
+
+
+
+  }
+
+  alumbradoEspacio(){
+
+  
+    if (mouseX>this.planeta.getPosX()+10&& mouseY>this.planeta.getPosY()+10&&mouseX<this.planeta.getPosX()+370&& mouseY<this.planeta.getPosY()+400){
+      this.planeta.alumbrado();
+    }  
+    if (mouseX>this.sol.getPosX()+10&& mouseY>this.sol.getPosY()+10&&mouseX<this.sol.getPosX()+370&& mouseY<this.sol.getPosY()+250&&this.farol.getCambioFarol()==true){
+      this.sol.alumbrado();
+    }
+    if (mouseX>this.luna.getPosX()+10&& mouseY>this.luna.getPosY()+10&&mouseX<this.luna.getPosX()+370&& mouseY<this.luna.getPosY()+200){
+      this.luna.alumbrado();
+    }
+
+   
 
 
 
@@ -317,14 +307,7 @@ class Logica {
 
 
 
-  getObjAlumbrado() {
-    return this.objAlumbrado;
-  }
-
-  setObjAlumbrado(objAlumbrado) {
-    this.objAlumbrado = objAlumbrado;
-
-  }
+  
 
 
 

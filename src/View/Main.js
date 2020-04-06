@@ -9,6 +9,7 @@ let logica;
 
 
 function preload() {
+    
 
 }
 function setup() {
@@ -40,18 +41,14 @@ function draw() {
             pantallaTitle.pintarTitulo();
             break;
         case 1:
+            controller.alumbradoEspacio();
             pantalla.pintarViewEspacio();
 
 
 
-
-            if (dist(mouseX, mouseY, 300, 300) < 100) {
-                controller.objAlumbrado() == 0;
-                controller.alumbrado();
-            }
-
-
+            controller.alumbrado();
             pantalla.pintarView();
+          
 
 
 

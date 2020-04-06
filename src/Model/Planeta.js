@@ -22,12 +22,12 @@ class Planeta extends Espacio {
 
   pintarPlaneta() {
     if (this.planetPlay == false) {
-      image(this.planet, 200, 300);
+      image(this.planet, this.posX, this.posY);
     } else {
 
-      image(this.planetArray[frameCount % 5], 0, 400);
-      if (frameCount == 5) {
-        image(this.planetArray[5], 0, 400);
+      image(this.planetArray[frameCount % 7], 0, 400);
+      if (frameCount == 7) {
+        image(this.planetArray[7], 0, 400);
       }
     }
 
@@ -38,7 +38,7 @@ class Planeta extends Espacio {
 
 
   alumbrado() {
-    image(this.planetaLU, this.posX, this.posY);
+    image(this.planetaLU, this.posX-25, this.posY-25);
   }
 
 

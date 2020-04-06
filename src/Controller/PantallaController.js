@@ -49,9 +49,10 @@ class PantallaController {
         this.logica.alumbrado();
     }
 
-    objAlumbrado() {
-        return this.logica.getObjAlumbrado();
+    alumbradoEspacio(){
+        this.logica.alumbradoEspacio();
     }
+
 
 
 

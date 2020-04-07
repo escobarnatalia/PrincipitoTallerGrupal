@@ -18,6 +18,7 @@ class Logica {
     this.star= new Star(-300,0);
     
 
+    this.activar = false;
 
 
 
@@ -105,7 +106,7 @@ class Logica {
   pintarEspacio() {
     this.star.pintar();
     this.planeta.pintarPlaneta();
-
+   
     if (this.farol.getCambioFarol() == true) {
       this.sol.pintarSol();
       this.luna.setPosX(570) ;
@@ -251,6 +252,27 @@ class Logica {
 
   //cambio planeta
   cambioPlaneta() {
+    if (dist(mouseX, mouseY, 200 + 192, 300 + 194) < 500) {
+
+      this.activar = true
+       
+      
+    }
+  }
+
+  cambioPlaneta2() {
+     
+    if (this.activar == true  ){
+
+       
+      this.planeta.contar();
+     
+  }
+}
+  
+  
+  
+  /*cambioPlaneta() {
     if (this.planeta.getPlanetPlay == false && dist(mouseX, mouseY, this.planeta.getPosX() + 75, this.planeta.getPosY + 75) < 200) {
 
       this.planeta.setPlanetPlay(true);
@@ -262,7 +284,7 @@ class Logica {
 
       this.planeta.setPlanetPlay(false);
     }
-  }
+  }*/
 
 
   // MOVIMIENTO SOL Y LUNA

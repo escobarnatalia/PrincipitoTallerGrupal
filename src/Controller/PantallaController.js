@@ -16,6 +16,7 @@ class PantallaController {
 
     pintarEspacio() {
         this.logica.pintarEspacio();
+        this.logica.cambioPlaneta2();
     }
 
     text() {

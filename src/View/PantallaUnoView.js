@@ -1,15 +1,27 @@
 let titulo;
-class PantallaUnoView{
+class PantallaUnoView {
 
-    constructor(){
-        this.titulo=loadImage('./imagenes/title.png');
-    
+    constructor() {
+       this.inicio = loadImage('./imagenes/inicio.jpg');
+       this.alumbradoILU = loadImage('./imagenes/leerILU.png');
+
 
     }
 
-   pintarTitulo(){
-       image(this.titulo,0,50);
-   }
+    pintarInicio() {
+        image(this.inicio, 0, 0);
+        
+    }
+
+    pintarAlumbrado() {
+
+        if (mouseX > 260  && mouseY > 485  && mouseX <524  && mouseY < 556 ) {
+            image(this.alumbradoILU, 263, 490);
+        }
+        
+
+    } 
+
 
 
 }

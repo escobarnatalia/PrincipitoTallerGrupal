@@ -3,16 +3,19 @@ class Planeta extends Espacio {
   constructor(posX, posY) {
     super(posX, posY)
 
-    this.planetPlay = false;
+    //this.planetPlay = false;
     this.planet = loadImage('./imagenes/planeta.png');
     this.planetaLU = loadImage('./imagenes/planetaILU.png');
+ 
 
-    this.planetArray = [];
+    this.planetArray = [7];
+    
 
-    for (let i = 0; i < 7; i++) {
+    /*for (let i = 0; i < 7; i++) {
       this.planetArray = loadImage('./imagenes/gifPlanet/' + i + '.png');
-    }
+    }*/
 
+    
 
 
     ///no funciona image abajo
@@ -23,20 +26,13 @@ class Planeta extends Espacio {
   pintarPlaneta() {
     if (this.planetPlay == false) {
       image(this.planet, this.posX, this.posY);
-    } else {
-
-      image(this.planetArray[frameCount % 7], 0, 400);
-      if (frameCount == 7) {
-        image(this.planetArray[7], 0, 400);
-      }
-    }
-
+    } 
+    
+     
   }
 
-
-
-
-
+  
+  
   alumbrado() {
     image(this.planetaLU, this.posX-25, this.posY-25);
   }
@@ -49,5 +45,18 @@ class Planeta extends Espacio {
     this.planetPlay = this.planetPlay;
   }
 
+
+
+
+ 
+
+
+
+
+ 
+  /* image(this.planetArray[frameCount % 7], 0, 400);
+      if (frameCount == 7) {
+        image(this.planetArray[7], 0, 400);
+      }*/
 
 }

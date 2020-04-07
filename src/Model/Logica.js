@@ -93,7 +93,9 @@ class Logica {
 
   pintarEspacio() {
 
-    this.planeta.pintarPlaneta();
+     this.planeta.pintaGif();
+
+    //this.planeta.pintarPlaneta();
 
     if (this.farol.getCambioFarol() == true) {
       this.sol.pintarSol();

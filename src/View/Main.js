@@ -1,8 +1,9 @@
 
-let pantalla, pantallaDownload, pantallaTitle;
+let pantalla, pantallaDownload, pantallaInicio;
 let bg, screen;
 let faroleroChange;
 let logica;
+ 
 
 
 
@@ -14,13 +15,13 @@ function preload() {
 }
 function setup() {
     createCanvas(800, 800);
-    screen = 1;
+    screen = 0;
     bg = loadImage('./imagenes/background.png');
     pantalla = new PantallaView();
-    pantallaTitle = new PantallaUnoView();
+    pantallaInicio = new PantallaUnoView();
     pantallaDownload = new PantallaFinalView();
     controller = new PantallaController();
-
+    
 
 
 
@@ -33,12 +34,13 @@ function setup() {
 function draw() {
     background(0);
     image(bg, 0, 0);
-
+    print(mouseX);
 
     switch (screen) {
         case 0:
-
-            pantallaTitle.pintarTitulo();
+           
+            pantallaInicio.pintarInicio();
+            pantallaInicio.pintarAlumbrado();
             break;
         case 1:
             controller.alumbradoEspacio();
@@ -85,6 +87,9 @@ function mousePressed() {
     pantalla.validarEspacio();
     pantalla.textoView();
 
+    if(mouseX > 260  && mouseY > 485  && mouseX <524  && mouseY < 556 && screen == 0){
+        screen =  1;
+    }
 
 }
 function mouseReleased() {

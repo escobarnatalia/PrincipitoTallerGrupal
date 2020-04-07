@@ -10,22 +10,25 @@ let soundPlay;
 
 
 function preload() {
+  
 
-  sound = loadSound('./data/song.mp3');
-    
 
 }
 function setup() {
+
+    this.sacramento=loadFont('./data/sacramento.ttf')
+
     createCanvas(800, 800);
-    screen = 0;
+    screen = 1;
     bg = loadImage('./imagenes/background.png');
     pantalla = new PantallaView();
     pantallaInicio = new PantallaUnoView();
-    pantallaDownload = new PantallaFinalView();
+    
     controller = new PantallaController();
 
-    soundPlay=false;
-
+    this.soundPlay=false;
+    this.sound = loadSound('./data/song.mp3');
+    
 
 
 
@@ -35,6 +38,7 @@ function setup() {
 }
 
 function draw() {
+    textFont('sacramento');
     background(0);
     image(bg, 0, 0);
     
@@ -54,6 +58,7 @@ function draw() {
 
             controller.alumbrado();
             pantalla.pintarView();
+             pantalla.pintarGuardar();
           
 
 
@@ -84,25 +89,27 @@ function mouseClicked() {
 }
 
 function mousePressed() {
-if(dist(mouseX,mouseY,300,300)<100){
-    sound.play();
-}
+// if(dist(mouseX,mouseY,300,300)<100){
+//     sound.play();
+// }
 
-if(dist(mouseX,mouseY,100,100)<100){
-    sound.stop();
-}
+// if(dist(mouseX,mouseY,100,100)<100){
+//     sound.stop();
+// }
+
+controller.clic();
    
         
     
-
+if(mouseX > 260  && mouseY > 485  && mouseX <524  && mouseY < 556 && screen == 0){
+    screen =  1;
+}
   
     pantalla.validarClicks();
     pantalla.validarEspacio();
     pantalla.textoView();
 
-    if(mouseX > 260  && mouseY > 485  && mouseX <524  && mouseY < 556 && screen == 0){
-        screen =  1;
-    }
+    
 
 }
 function mouseReleased() {
@@ -111,10 +118,3 @@ function mouseReleased() {
 
 }
 
-
-function mouseDragged() {
-
-
-
-
-}

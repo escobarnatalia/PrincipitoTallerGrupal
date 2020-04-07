@@ -20,7 +20,7 @@ No hay nada que comprender – dijo el farolero. – La consigna es la consigna.
 Y apagó su farol.
 
 A continuación se secó la frente con un pañuelo a cuadros rojos.
-Tengo un oficio terrible. Antes sí era razonable. Apagaba a la mañana y encendía a la noche. Tenía el resto del día para reposarme, y el resto de la noche para dormir...
+Tengo un oficio terrible. Antes sí era razonable. Apagaba a la mañana y encendía a la noche con la luna . Tenía el resto del día para reposarme, y el resto de la noche para dormir...
 Y desde esa época, la consigna cambió ?
 La consigna no cambió – dijo el farolero. – Ésa es la desgracia ! El planeta fue girando de año en año cada vez más rápido, y la consigna no cambió !
 Y entonces ? – dijo el principito.
@@ -44,6 +44,8 @@ Tu planeta es tan pequeño que puedes darle la vuelta en tres zancadas. No tiene
 Eso no es un gran avance – dijo el farolero. - Lo que me gusta en la vida es dormir.
 Es una lástima – dijo el principito.
 Es una lástima – dijo el farolero. Buenos días.
+
+luna
 
 Y apagó su farol.
 

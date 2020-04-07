@@ -8,7 +8,7 @@ class Farolero extends Personaje{
       this.cambioFarol=true;
       this.cambioHablar=true;
       this.hablarOn=0;
-      this.sacramento=loadFont('./data/sacramento.ttf')
+     
       this.faroleroLU=loadImage('./imagenes/faroleroUnoILU.png');
       this.faroleroDosLU=loadImage('./imagenes/faroleroDosILU.png');
   }
@@ -25,19 +25,22 @@ class Farolero extends Personaje{
   }
 
    alumbrado(){
+    if(this.cambioFarol==true){
     image(this.faroleroLU,this.posX-5,this.posY-20);
    
+   }else{
+    image(this.faroleroDosLU,this.posX-5,this.posY-20);
    }
 
 
-
+  }
 
 
 
 
 
   hablar(){
-    textFont('sacramento');
+   
     textSize(45);
   
 

@@ -3,7 +3,7 @@ class Planeta extends Espacio {
   constructor(posX, posY) {
     super(posX, posY)
 
-    //this.planetPlay = false;
+    this.planetPlay = false;
     this.planet = loadImage('./imagenes/planeta.png');
     this.planetaLU = loadImage('./imagenes/planetaILU.png');
  

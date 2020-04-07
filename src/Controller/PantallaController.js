@@ -26,16 +26,18 @@ class PantallaController {
     textDownload() {
         this.logica.downloadCuento();
     }
-
-
-
-
+    
     interacciones() {
-        this.logica.validarInteraccion();
+        
         this.logica.movEspacio();
         this.logica.hablarFarolero();
         this.logica.cambiarFarol();
         this.logica.cambioPlaneta();
+    }
+
+
+    clic(){
+        this.logica.validarInteraccion();
     }
 
 

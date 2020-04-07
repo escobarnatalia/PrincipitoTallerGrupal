@@ -89,7 +89,7 @@ class Logica {
 
   validarInteraccion() {
     for (let i = 0; i < this.palabrasClaves.length; i++) {
-      text(this.palabrasClaves[0],100,100);
+      text(this.palabrasClaves[i],100,100);
     }
     print("entro");
 
@@ -118,14 +118,26 @@ class Logica {
     }
 
     if (this.validarMovSol == true) {
-      
       this.sol.movimiento();
-      this.direccion=createVector(this.sol.getPosX()+this.star.getPosX(),this.sol.getPosY()+this.star.getPosY());
+      if( this.sol.getPosX()+250>=800){
+        this.sol.setPosX(550);
+
+    }
+      this.direccion=createVector(this.sol.getPosX()-this.planeta.getPosX(),this.sol.getPosY()-0);
       this.direccion.normalize();
       
       this.star.setPosX(this.star.getPosX()+this.direccion.x*1);
       this.planeta.setPosX(this.planeta.getPosX()+this.direccion.x*1);
+      this.principe.setPosX(this.principe.getPosX()+this.direccion.x*1);
+      this.farol.setPosX(this.farol.getPosX()+this.direccion.x*1);
+      this.farolero.setPosX(this.farolero.getPosX()+this.direccion.x*1);
+
+     
+
+    if (this.planeta.getPosX()+200 >= 800) {
+      this.planeta.setPosX(500);
     }
+  }
 
     
     // if(this.sol.getPosX()<=50){
@@ -138,13 +150,23 @@ class Logica {
 
     if (this.validarMovLuna == true) {
       this.luna.movimiento();
-      this.direccionLuna=createVector(this.luna.getPosX()+this.star.getPosX(),this.luna.getPosY()+this.star.getPosY());
+      if( this.luna.getPosX()+200>=800){
+        this.luna.setPosX(640);
+
+    }
+      this.direccionLuna=createVector(this.luna.getPosX()+this.planeta.getPosX(),this.luna.getPosY()+this.planeta.getPosY());
       this.direccionLuna.normalize();
       
       this.star.setPosX(this.star.getPosX()+this.direccionLuna.x*1);
       this.planeta.setPosX(this.planeta.getPosX()+this.direccionLuna.x*1);
+      this.principe.setPosX(this.principe.getPosX()+this.direccionLuna.x*1);
+      this.farol.setPosX(this.farol.getPosX()+this.direccionLuna.x*1);
+      this.farolero.setPosX(this.farolero.getPosX()+this.direccionLuna.x*1);
+     
 
     }
+  
+  
 
  
 
@@ -200,13 +222,29 @@ class Logica {
       && this.farol.getCambioFarol() == true) {
       this.farol.setCambioFarol(false);
       this.farolero.setCambioFarol(false);
-     
+
+      ////
+      this.star.setPosX(-300);
+      this.planeta.setPosX(200);
+      this.principe.setPosX(100);
+      this.farol.setPosX(300);
+      this.farolero.setPosX(340);
+      this.sol.setPosX(50);
+      this.luna.setPosX(570);
       return;
     }
     if (mouseX > this.farol.getPosX() && mouseY > this.farol.getPosY() && mouseX < this.farol.getPosX() + 70 && mouseY < this.farol.getPosY() + 100 && this.farol.getCambioFarol() == false) {
       this.farol.setCambioFarol(true);
       this.farolero.setCambioFarol(true);
-     
+      ///
+      this.star.setPosX(-300);
+      this.planeta.setPosX(200);
+      this.principe.setPosX(100);
+      this.farol.setPosX(300);
+      this.farolero.setPosX(340);
+      this.luna.setPosX(570);
+      this.sol.setPosX(50);
+      
       return;
     }
   }
@@ -229,20 +267,14 @@ class Logica {
 
   // MOVIMIENTO SOL Y LUNA
   movEspacio() {
-    
-
     if (dist(mouseX, mouseY, this.sol.getPosX() + 50, this.sol.getPosY() + 30) < 100) {
       this.validarMovSol = true;
       
     }
-
-
     if (dist(mouseX, mouseY, this.luna.getPosX() + 50, this.luna.getPosY() + 30) < 100) {
       this.validarMovLuna = true;
 
     }
-
-
   }
 
   //frenar movimiento sol y luna
@@ -250,10 +282,10 @@ class Logica {
 
     if (this.validarMovSol == true &&dist(mouseX, mouseY, this.sol.getPosX() + 50, this.sol.getPosY() + 30) < 100) {
       this.validarMovSol = false;
-      if (this.sol.getPosX() + 50 < 0) {
+      if (this.sol.getPosX() + 50 <= 0) {
         this.sol.setPosX(50);
       }
-      if (this.sol.getPosX() > 800) {
+      if (this.sol.getPosX()+200 >= 800) {
         this.sol.setPosX(50);
       }
     }
@@ -261,10 +293,10 @@ class Logica {
     if (this.validarMovLuna == true &&  dist(mouseX, mouseY, this.luna.getPosX() + 50, this.luna.getPosY() + 30) < 100) {
       this.validarMovLuna = false;
 
-      if (this.luna.getPosX() + 50 < 0) {
+      if (this.luna.getPosX() + 50 <= 0) {
         this.luna.setPosX(570);
       }
-      if (this.luna.getPosX() > 800) {
+      if (this.luna.getPosX()+100 >= 800) {
         this.luna.setPosX(570);
       }
     }
@@ -299,7 +331,7 @@ class Logica {
     if (mouseX>this.sol.getPosX()+10&& mouseY>this.sol.getPosY()+10&&mouseX<this.sol.getPosX()+370&& mouseY<this.sol.getPosY()+250){
       this.sol.alumbrado();
     }
-    if(this.farol.getCambioFarol()==false){
+    if(this.farol.getCambioFarol()==true){
       if (mouseX>this.luna.getPosX()+10&& mouseY>this.luna.getPosY()+10&&mouseX<this.luna.getPosX()+370&& mouseY<this.luna.getPosY()+200){
         this.luna.alumbrado();
       }
@@ -323,9 +355,10 @@ class Logica {
     for (let i = 0; i < this.palabrasClaves.length; i++) {
 
     
-			let luna = " luna" + this.palabrasClaves[5];
+      let luna = " luna" + this.palabrasClaves[5];
+      let principe = "principito"+this.palabrasClaves[1];
 
-			this.downloadTxt[i] = luna;
+			this.downloadTxt[i] = luna+principe;
 
 
 

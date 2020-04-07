@@ -18,7 +18,6 @@ class Sol extends Espacio{
     }
 
 
-   
 
 
 

@@ -2,7 +2,7 @@ class Espacio{
     constructor(posX,posY){
         this.posX=posX;
         this.posY=posY;
-        this.clickObj=false;
+       
     }
 
     pintar(){
@@ -11,24 +11,14 @@ class Espacio{
 
     movimiento(){
         this.posX= mouseX;
+       
+       
         this.posY=this.posY;
-        // if(this.clickObj==true){
-        //     this.posX= mouseX;
-        // }else{
-        //     this.posX= posX;
-        //     this.posY=posY;
-        // }
         
           
         
     }
 
-    getClickObj(){
-        return this.clickObj;
-    }
-    setClickObj(clickObj){
-        this.clickObj = clickObj;
-    }
     
 
 

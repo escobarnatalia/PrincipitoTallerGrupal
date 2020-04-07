@@ -10,16 +10,16 @@ let soundPlay;
 
 
 function preload() {
-  
+    
 
 
 }
 function setup() {
-
-    this.sacramento=loadFont('./data/sacramento.ttf')
+    sound = loadSound('song.mp3');
+    sacramento=loadFont('./data/sacramento.ttf')
 
     createCanvas(800, 800);
-    screen = 1;
+    screen = 0;
     bg = loadImage('./imagenes/background.png');
     pantalla = new PantallaView();
     pantallaInicio = new PantallaUnoView();
@@ -27,7 +27,7 @@ function setup() {
     controller = new PantallaController();
 
     this.soundPlay=false;
-    this.sound = loadSound('./data/song.mp3');
+  
     
 
 
@@ -51,12 +51,12 @@ function draw() {
             pantallaInicio.pintarAlumbrado();
             break;
         case 1:
-            controller.alumbradoEspacio();
+            // controller.alumbradoEspacio();
             pantalla.pintarViewEspacio();
 
 
 
-            controller.alumbrado();
+            // controller.alumbrado();
             pantalla.pintarView();
              pantalla.pintarGuardar();
           
@@ -89,9 +89,9 @@ function mouseClicked() {
 }
 
 function mousePressed() {
-// if(dist(mouseX,mouseY,300,300)<100){
-//     sound.play();
-// }
+if(dist(mouseX,mouseY,300,300)<100){
+   
+}
 
 // if(dist(mouseX,mouseY,100,100)<100){
 //     sound.stop();
@@ -103,6 +103,9 @@ controller.clic();
     
 if(mouseX > 260  && mouseY > 485  && mouseX <524  && mouseY < 556 && screen == 0){
     screen =  1;
+    sound.play();
+    
+    
 }
   
     pantalla.validarClicks();

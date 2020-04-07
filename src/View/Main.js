@@ -3,12 +3,15 @@ let pantalla, pantallaDownload, pantallaTitle;
 let bg, screen;
 let faroleroChange;
 let logica;
-
+let sound;
+let soundPlay;
 
 
 
 
 function preload() {
+
+  sound = loadSound('./data/song.mp3');
     
 
 }
@@ -21,6 +24,7 @@ function setup() {
     pantallaDownload = new PantallaFinalView();
     controller = new PantallaController();
 
+    soundPlay=false;
 
 
 
@@ -33,6 +37,7 @@ function setup() {
 function draw() {
     background(0);
     image(bg, 0, 0);
+    
 
 
     switch (screen) {
@@ -62,8 +67,6 @@ function draw() {
 
 
 
-
-
 }
 
 
@@ -80,7 +83,18 @@ function mouseClicked() {
 }
 
 function mousePressed() {
+if(dist(mouseX,mouseY,300,300)<100){
+    sound.play();
+}
 
+if(dist(mouseX,mouseY,100,100)<100){
+    sound.stop();
+}
+   
+        
+    
+
+  
     pantalla.validarClicks();
     pantalla.validarEspacio();
     pantalla.textoView();

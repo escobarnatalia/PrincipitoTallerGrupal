@@ -2,8 +2,7 @@ class PantallaView {
 
     constructor() {
         this.pantallaController = new PantallaController();
-        this.star = loadImage('./imagenes/stars.png')
-
+       
 
     }
 
@@ -21,7 +20,7 @@ class PantallaView {
     }
 
     pintarViewEspacio() {
-        image(this.star, 0, 0);
+        
         this.pantallaController.pintarEspacio();
     }
 

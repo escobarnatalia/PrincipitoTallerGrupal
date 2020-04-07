@@ -15,6 +15,8 @@ class Logica {
     this.farol = new Farol(300, 50);
     this.sol = new Sol(50, 50);
     this.luna = new Luna(570, 50);
+    this.star= new Star(-300,0);
+    
 
 
 
@@ -80,6 +82,22 @@ class Logica {
 
 
 
+
+   movimientoEstellas(){
+     
+
+    // this.direccion=new PVector(this.sol.getPosX()-this.star.getPosX(),this.sol.getPosY()-this.star.getPosY());
+    // this.direccion.normalize();
+    // this.star.setPosX(this.star.getPosX()+this.direccion.x*3);
+
+   }
+
+
+
+
+
+
+
   validarInteraccion() {
 
     for (let i = 0; i < this.palabrasClaves.length; i++) {
@@ -92,6 +110,7 @@ class Logica {
   }
 
   pintarEspacio() {
+    this.star.pintar();
 
     this.planeta.pintarPlaneta();
 
@@ -107,12 +126,25 @@ class Logica {
 
     if (this.validarMovSol == true) {
       this.sol.movimiento();
+      this.direccion=createVector(this.sol.getPosX()-this.star.getPosX(),this.sol.getPosY()-this.star.getPosY());
+      this.direccion.normalize();
+      
+      this.star.setPosX(this.star.getPosX()+this.direccion.x*1);
+      this.planeta.setPosX(this.planeta.getPosX()+this.direccion.x*1);
+
+
+     
 
     }
     if (this.validarMovLuna == true) {
       this.luna.movimiento();
 
     }
+
+  if(this.sol.getPosX()<=50){
+    this.star.setPosX(-300);
+    this.planeta.setPosX(200);
+  }
 
   }
 
@@ -207,6 +239,8 @@ class Logica {
 
     if (dist(mouseX, mouseY, this.sol.getPosX() + 100, this.sol.getPosY() + 30) < 100) {
       this.validarMovSol = true;
+     
+  
 
     }
 

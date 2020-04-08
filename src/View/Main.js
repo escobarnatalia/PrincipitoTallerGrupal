@@ -11,15 +11,16 @@ let soundPlay;
 
 function preload() {
     
-
+    
 
 }
 function setup() {
     sound = loadSound('song.mp3');
-    sacramento=loadFont('./data/sacramento.ttf')
+    sacramento=loadFont('./data/sacramento.ttf');
+   
 
     createCanvas(800, 800);
-    screen = 0;
+    screen = 1;
     bg = loadImage('./imagenes/background.png');
     pantalla = new PantallaView();
     pantallaInicio = new PantallaUnoView();
@@ -77,7 +78,7 @@ function draw() {
 
 
 function mouseClicked() {
-    print(mouseX + " ", mouseY + " ");
+ 
     /*
     if (screen == 2 && dist(mouseX, mouseY, 600, 660) < 100) {
         pantalla.textoView();
@@ -89,13 +90,11 @@ function mouseClicked() {
 }
 
 function mousePressed() {
-if(dist(mouseX,mouseY,300,300)<100){
-   
-}
 
-// if(dist(mouseX,mouseY,100,100)<100){
-//     sound.stop();
-// }
+
+if(dist(mouseX,mouseY,100,100)<100){
+    sound.stop();
+}
 
 controller.clic();
    

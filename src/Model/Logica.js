@@ -39,25 +39,50 @@ class Logica {
 
   lecturaCuento() {
 
+
+  
+      
+   
+
+
     for (let i = 0; i < this.txtCuento.length; i++) {
+   
+     
+      while(this.txtCuento[i].includes("farolero")){
+        this.txtCuento[i]=this.txtCuento[i].replace("farol","hahahedhewd");
+        // this.txtCuento=this.txtCuento.replace("principito","hepls");
+        
+          } 
+         
+         
+
+         
+
       this.palabras = this.txtCuento[i].split(" ");
 
 
 
       for (let i = 0; i < this.palabras.length; i++) {
+
+        // while(this.palabras[i].includes("farolero")){
+        //   this.txtCuento[i]=this.txtCuento[i].replace("farol","hahahedhewd");
+        //   // this.txtCuento=this.txtCuento.replace("principito","hepls");
+          
+        //     } 
+        //     console.log(this.txtCuento.includes("farol"));
+
+
+
+
+
         switch (this.palabras[i]) {
           case "farol":
             // this.palabrasClaves.push (new Cuento(this.palabras[i], 300, 50));
-            this.palabrasClaves[0] = new Cuento(this.palabras[i], 570, 50);
-            
-            
-            
+            this.palabrasClaves[0] = new Cuento(this.palabras[i], 570, 50);      
             break;
           case "principito":
             // this.palabrasClaves.push (new Cuento(this.palabras[i], 300, 50));
             this.palabrasClaves[1] = new Cuento(this.palabras[i], 570, 50);
-           
-           
             break;
           case "farolero":
             // this.palabrasClaves.push (new Cuento(this.palabras[i], 300, 50));
@@ -74,31 +99,23 @@ class Logica {
             break;
           case "luna":
             // this.palabrasClaves.push (new Cuento(this.palabras[i], 300, 50));
-            
              this.palabrasClaves[5] = new Cuento(this.palabras[i], 570, 50);
             
 
             break;
         }
+
+    for (let i = 0; i < this.palabrasClaves.length; i++) {
+      text(this.palabrasClaves[0],100,100);
+    }
       }
       
     } 
-
+   
   }
 
 
   validarInteraccion() {
-    for (let i = 0; i < this.palabrasClaves.length; i++) {
-      text(this.palabrasClaves[i],100,100);
-    }
-    print("entro");
-
-    // for (let i = 0; i < this.palabrasClaves.length; i++) {
-    //   if (dist(mouseX, mouseY, this.palabrasClaves[2].getPosX(), this.palabrasClaves[2].getPosY()) < 100) {
-
-
-    //   }
-    // }
 
   }
 
@@ -126,27 +143,18 @@ class Logica {
       this.direccion=createVector(this.sol.getPosX()-this.planeta.getPosX(),this.sol.getPosY()-0);
       this.direccion.normalize();
       
-      this.star.setPosX(this.star.getPosX()+this.direccion.x*1);
-      this.planeta.setPosX(this.planeta.getPosX()+this.direccion.x*1);
-      this.principe.setPosX(this.principe.getPosX()+this.direccion.x*1);
-      this.farol.setPosX(this.farol.getPosX()+this.direccion.x*1);
-      this.farolero.setPosX(this.farolero.getPosX()+this.direccion.x*1);
+      this.star.setPosX(this.star.getPosX()+this.direccion.x*0.5);
+      this.planeta.setPosX(this.planeta.getPosX()+this.direccion.x*0.5);
+      this.principe.setPosX(this.principe.getPosX()+this.direccion.x*0.5);
+      this.farol.setPosX(this.farol.getPosX()+this.direccion.x*0.5);
+      this.farolero.setPosX(this.farolero.getPosX()+this.direccion.x*0.5);
 
      
 
     if (this.planeta.getPosX()+200 >= 800) {
       this.planeta.setPosX(500);
     }
-  }
-
-    
-    // if(this.sol.getPosX()<=50){
-    //   this.star.setPosX(-300);
-    //   this.planeta.setPosX(200);
-    // }
-
-
-    
+    } 
 
     if (this.validarMovLuna == true) {
       this.luna.movimiento();
@@ -154,14 +162,14 @@ class Logica {
         this.luna.setPosX(640);
 
     }
-      this.direccionLuna=createVector(this.luna.getPosX()+this.planeta.getPosX(),this.luna.getPosY()+this.planeta.getPosY());
+      this.direccionLuna=createVector(this.luna.getPosX()-this.planeta.getPosX(),this.luna.getPosY()-this.planeta.getPosY());
       this.direccionLuna.normalize();
       
-      this.star.setPosX(this.star.getPosX()+this.direccionLuna.x*1);
-      this.planeta.setPosX(this.planeta.getPosX()+this.direccionLuna.x*1);
-      this.principe.setPosX(this.principe.getPosX()+this.direccionLuna.x*1);
-      this.farol.setPosX(this.farol.getPosX()+this.direccionLuna.x*1);
-      this.farolero.setPosX(this.farolero.getPosX()+this.direccionLuna.x*1);
+      this.star.setPosX(this.star.getPosX()+this.direccionLuna.x*0.5);
+      this.planeta.setPosX(this.planeta.getPosX()+this.direccionLuna.x*0.5);
+      this.principe.setPosX(this.principe.getPosX()+this.direccionLuna.x*0.5);
+      this.farol.setPosX(this.farol.getPosX()+this.direccionLuna.x*0.5);
+      this.farolero.setPosX(this.farolero.getPosX()+this.direccionLuna.x*0.5);
      
 
     }
@@ -203,13 +211,7 @@ class Logica {
 
 
     }
-    ////quitar
-
-    // if (mouseX > this.farolero.getPosX() + 100 && mouseY > this.farolero.getPosY() && mouseX < this.farolero.getPosX() + 250 && mouseY < this.farolero.getPosY() + 250
-    // ) {
-
-    //   return;
-    // }
+  
 
 
 
@@ -316,10 +318,6 @@ class Logica {
     if (mouseX > this.farol.getPosX()&& mouseY > this.farol.getPosY()-30 && mouseX < this.farol.getPosX() + 70 && mouseY < this.farol.getPosY() + 100){
       this.farol.alumbrado();
     }
-
-
-
-
   }
 
   alumbradoEspacio(){
@@ -337,13 +335,6 @@ class Logica {
       }
     }
     
-
-   
-
-
-
-
-
   }
 
 
@@ -359,9 +350,6 @@ class Logica {
       let principe = "principito"+this.palabrasClaves[1];
 
 			this.downloadTxt[i] = luna+principe;
-
-
-
       
     }
 
@@ -369,21 +357,9 @@ class Logica {
     //crear boton, poner posiciones de el
     if (mouseX > 625  && mouseY > 700 && mouseX <800  && mouseY < 740 ) {
       saveStrings(this.downloadTxt, './data/cuentodown.txt');
-      print("save")
+     
     }
 
   }
-
-
-
-
-
-
-  
-
-
-
-
-
 
 }

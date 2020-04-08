@@ -1,17 +1,15 @@
 
-let pantalla, pantallaDownload, pantallaInicio;
+let pantalla, pantallaInicio;
 let bg, screen;
-let faroleroChange;
 let logica;
 let sound;
-let soundPlay;
+let mouse,sacramento;
+
 
 
 
 
 function preload() {
-   
-
     sound = loadSound('song.mp3');
 }
 function setup() {

@@ -16,7 +16,7 @@ class PantallaController {
 
     pintarEspacio() {
         this.logica.pintarEspacio();
-      
+
     }
 
     text() {
@@ -30,17 +30,17 @@ class PantallaController {
 
     interacciones() {
 
+        this.logica.movPersonaje();
         this.logica.movEspacio();
         this.logica.hablarFarolero();
         this.logica.cambiarFarol();
         this.logica.cambioPlaneta();
-        
+
     }
-
-
 
     frenarInteracciones() {
         this.logica.frenarMovimiento();
+        this.logica.frenarMovimientoPersonaje();
     }
 
 

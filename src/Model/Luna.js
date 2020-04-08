@@ -1,26 +1,26 @@
-class Luna extends Espacio{
-    constructor(posX,posY){
-        super(posX,posY);
-        this.lunaImg=loadImage('./imagenes/luna.png');
-        this.lunaLU=loadImage('./imagenes/lunaILU.png');
+class Luna extends Espacio {
+    constructor(posX, posY) {
+        super(posX, posY);
+        this.lunaImg = loadImage('./imagenes/luna.png');
+        this.lunaLU = loadImage('./imagenes/lunaILU.png');
     }
 
-    pintarLuna(){
-        image(this.lunaImg,this.posX,this.posY);
+    pintarLuna() {
+        image(this.lunaImg, this.posX, this.posY);
     }
 
-    movimientoLuna(){
+    movimientoLuna() {
 
     }
 
-    alumbrado(){
-        image(this.lunaLU,this.posX,this.posY);
+    alumbrado() {
+        image(this.lunaLU, this.posX - 17, this.posY - 17);
     }
 
 
 
 
-  
+
 
 
 

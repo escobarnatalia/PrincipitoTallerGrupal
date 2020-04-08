@@ -16,6 +16,7 @@ class PantallaController {
 
     pintarEspacio() {
         this.logica.pintarEspacio();
+        this.logica.cambioPlaneta2();
     }
 
     text() {
@@ -26,9 +27,9 @@ class PantallaController {
     textDownload() {
         this.logica.downloadCuento();
     }
-    
+
     interacciones() {
-        
+
         this.logica.movEspacio();
         this.logica.hablarFarolero();
         this.logica.cambiarFarol();
@@ -36,14 +37,13 @@ class PantallaController {
     }
 
 
-    clic(){
+    clic() {
         this.logica.validarInteraccion();
     }
 
 
     frenarInteracciones() {
         this.logica.frenarMovimiento();
-        this.logica.pararPlaneta();
     }
 
 
@@ -51,7 +51,7 @@ class PantallaController {
         this.logica.alumbrado();
     }
 
-    alumbradoEspacio(){
+    alumbradoEspacio() {
         this.logica.alumbradoEspacio();
     }
 

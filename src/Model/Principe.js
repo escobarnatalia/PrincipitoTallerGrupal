@@ -5,7 +5,7 @@ class Principe extends Personaje{
         super(posX, posY);
 
     
-         this.imagenPrincipe = loadImage('./imagenes/principe.png');
+         this.imagenPrincipe = loadImage('./imagenes/principito.png');
          this.principeLU=loadImage('./imagenes/principeILU.png');
     }
 

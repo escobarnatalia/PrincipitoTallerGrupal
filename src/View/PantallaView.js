@@ -21,9 +21,6 @@ class PantallaView {
 
     }
 
-
-
-
     pintarView() {
 
 
@@ -39,24 +36,19 @@ class PantallaView {
 
 
     alumbrado() {
-        //pantallaController.objAlumbrado();
         this.pantallaController.alumbradoEspacio();
     }
 
-
-
-
-
-
-
+    alumbradoPersonaje(){
+        this.pantallaController.alumbrado();
+    }
     textoView() {
-        this.pantallaController.textDownload();
+       
     }
 
 
     validarClicks() {
-
-
+        this.pantallaController.textDownload();
         this.pantallaController.interacciones();
     }
 
@@ -66,9 +58,7 @@ class PantallaView {
     }
 
 
-    validarEspacio() {
 
-    }
 
 
 

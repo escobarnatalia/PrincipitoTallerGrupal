@@ -3,56 +3,42 @@ class Planeta extends Espacio {
   constructor(posX, posY) {
     super(posX, posY)
 
-    this.planetPlay = false;
+    this.play = false;
      
     this.planet = loadImage('./imagenes/planeta.png');
     this.planetaLU = loadImage('./imagenes/planetaILU.png');
  
-
     this.planetArray = [7];
     this.estado = 0;
+    for (let i = 0; i < 6; i++) {
+      this.planetArray[i] = loadImage('./imagenes/gifPlanet/' +(i+1) + '.png');
+  }
 
-    this.planetArray[0] =  loadImage('./imagenes/gifPlanet/0.png');
-    this.planetArray[1] =  loadImage('./imagenes/gifPlanet/1.png');
-    this.planetArray[2] =  loadImage('./imagenes/gifPlanet/2.png');
-    this.planetArray[3] =  loadImage('./imagenes/gifPlanet/3.png');
-    this.planetArray[4] =  loadImage('./imagenes/gifPlanet/4.png');
-    this.planetArray[5] =  loadImage('./imagenes/gifPlanet/5.png');
-    this.planetArray[6] =  loadImage('./imagenes/gifPlanet/6.png');
-
-    
-
+  }
 
      
 
-    /*for (let i = 0; i < 7; i++) {
-      this.planetArray = loadImage('./imagenes/gifPlanet/' + i + '.png');
-    }*/
-
-    
-   ///no funciona image abajo
-
-
-  }
+   
 
   pintarPlaneta(){
-    image(this.planetArray[this.estado], 200, 300);
+    if(this.play==false){
+      image(this.planet,this.posX, this.posY);
+    }else{
+      image(this.planetArray[this.estado], this.posX, this.posY);
+      if(frameCount %6 == 0){
+        this.estado++;
+    }
+    if(this.estado == 6){
+        this.estado=0;
+        this.play=false;
+    }
+      
+    }
+    
+   
   }
  
  
-  
-  
-    contar(){
-  
-      if(frameCount %20 == 0){
-          this.estado++;
-      }
-  
-      if(this.estado == 6){
-          this.estado=0;
-      }
-     
-  }
   
   
   alumbrado() {
@@ -60,34 +46,14 @@ class Planeta extends Espacio {
   }
 
 
-  getPintarGif() {
-    return this.pintarGif;
-  }
-  setPintarGif(pintarGif) {
-    this.pintarGif = this.pintarGif;
-  }
-
-
-  getContar() {
-    return this.contar;
-  }
-  setPintarGif(contar) {
-    this.contar = this.contar;
-  }
-
   
-  getPintarPlaneta() {
-    return this.PintarPlaneta;
-  }
-  setPintarPlay(PintarPlaneta) {
-    this.PintarPlaneta = this.PintarPlaneta;
-  }
 
-  getPlanetPlay() {
-    return this.planetPlay;
+
+  getPlay() {
+    return this.play;
   }
-  setPintarPlay(planetPlay) {
-    this.planetPlay = this.planetPlay;
+  setPlay(play) {
+    this.play = play;
   }
 
 
@@ -97,5 +63,4 @@ class Planeta extends Espacio {
       if (frameCount == 7) {
         image(this.planetArray[7], 0, 400);
       }*/
-
-}
+    }

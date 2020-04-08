@@ -29,7 +29,7 @@ class Farolero extends Personaje{
     image(this.faroleroLU,this.posX-5,this.posY-20);
    
    }else{
-    image(this.faroleroDosLU,this.posX-5,this.posY-20);
+    image(this.faroleroDosLU,this.posX-20,this.posY-15);
    }
 
 

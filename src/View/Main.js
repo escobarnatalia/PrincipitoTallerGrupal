@@ -14,14 +14,14 @@ function preload() {
 }
 function setup() {
     createCanvas(800, 800);
-    sacramento=loadFont('./data/sacramento.ttf');
-  
-    mouse=loadImage('./imagenes/mouse.png');
+    sacramento = loadFont('./data/sacramento.ttf');
+
+    mouse = loadImage('./imagenes/mouse.png');
     screen = 0;
     bg = loadImage('./imagenes/background.png');
     pantalla = new PantallaView();
     pantallaInicio = new PantallaUnoView();
-  
+
 
 }
 
@@ -30,7 +30,7 @@ function draw() {
     background(0);
     image(bg, 0, 0);
     cursor('mouse');
-  
+
 
 
     switch (screen) {
@@ -39,7 +39,7 @@ function draw() {
             pantallaInicio.pintarAlumbrado();
             break;
         case 1:
-           
+
             pantalla.alumbrado();
             pantalla.pintarViewEspacio();
             pantalla.alumbradoPersonaje();
@@ -48,32 +48,23 @@ function draw() {
 
 
             break;
-      
+
     }
-
-
-
-}
-
-
-function mouseClicked() {
-    
-   
 
 }
 
 function mousePressed() {
-if(mouseX > 260  && mouseY > 485  && mouseX <524  && mouseY < 556 && screen == 0){
-    screen =  1;
-    sound.play(); 
-    sound.loop();
-    return;
-}
+    if (mouseX > 260 && mouseY > 485 && mouseX < 524 && mouseY < 556 && screen == 0) {
+        screen = 1;
+        sound.play();
+        sound.loop();
+        return;
+    }
 
-if(screen==1){
-    pantalla.validarClicks();
-}
-   
+    if (screen == 1) {
+        pantalla.validarClicks();
+    }
+
 
 }
 function mouseReleased() {

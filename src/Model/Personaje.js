@@ -1,27 +1,34 @@
-class Personaje{
+class Personaje {
 
-    constructor(posX,posY){
-        
-    this.posX=posX;
-    this.posY=posY;
-  
+    constructor(posX, posY) {
+
+        this.posX = posX;
+        this.posY = posY;
+
 
 
     }
 
-   
-    getPosX(){
+    movimiento() {
+        this.posX = mouseX;
+
+        this.posY = this.posY;
+
+    }
+
+
+    getPosX() {
         return this.posX;
     }
-    getPosY(){
+    getPosY() {
         return this.posY;
     }
-    setPosX(posX){
+    setPosX(posX) {
         this.posX = posX;
     }
-    setPosY(posY){
+    setPosY(posY) {
         this.posY = posY;
     }
-   
+
 
 }

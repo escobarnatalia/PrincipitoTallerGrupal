@@ -42,9 +42,7 @@ class PantallaView {
     alumbradoPersonaje(){
         this.pantallaController.alumbrado();
     }
-    textoView() {
-       
-    }
+  
 
 
     validarClicks() {

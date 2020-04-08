@@ -9,12 +9,6 @@ class Personaje {
 
     }
 
-    movimiento() {
-        this.posX = mouseX;
-
-        this.posY = this.posY;
-
-    }
 
 
     getPosX() {

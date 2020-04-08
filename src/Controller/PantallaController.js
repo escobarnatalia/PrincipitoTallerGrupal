@@ -28,9 +28,11 @@ class PantallaController {
         this.logica.downloadCuento();
     }
 
-    interacciones() {
 
+
+    interacciones() {
         this.logica.movPersonaje();
+       
         this.logica.movEspacio();
         this.logica.hablarFarolero();
         this.logica.cambiarFarol();

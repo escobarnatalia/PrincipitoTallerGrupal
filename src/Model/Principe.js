@@ -14,7 +14,11 @@ class Principe extends Personaje {
 
     }
 
+    
     movimiento() {
+        this.posX = mouseX-140;
+
+        this.posY= mouseY-50;
 
 
     }

@@ -23,6 +23,7 @@ class Planeta extends Espacio {
   pintarPlaneta(){
     if(this.play==false){
       image(this.planet,this.posX, this.posY);
+     
     }else{
       image(this.planetArray[this.estado], this.posX, this.posY);
       if(frameCount %6 == 0){

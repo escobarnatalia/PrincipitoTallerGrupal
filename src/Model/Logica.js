@@ -34,6 +34,8 @@ class Logica {
     this.validarLuna = false;
     this.validarFarolero = false;
     this.validarPrincipe = false;
+    this.hablarPrincipe=false;
+    this.validarPasos=false;
 
 
     /////
@@ -54,8 +56,8 @@ class Logica {
 
 
     if (this.validarFarol == true) {
-      while (this.cuento.includes("farol")) {
-        this.cuento = this.cuento.replace("farol", "farol".toUpperCase());
+      while (this.cuento.includes("farol ")) {
+        this.cuento = this.cuento.replace("farol ", "farol ".toUpperCase());
 
       }
     }
@@ -97,8 +99,6 @@ class Logica {
 
 
 
-
-    // console.log(this.cuento);
 
 
   }
@@ -159,7 +159,7 @@ class Logica {
         this.luna.setPosX(640);
 
       }
-      this.direccionLuna = createVector(this.luna.getPosX() - this.planeta.getPosX(), this.luna.getPosY() - this.planeta.getPosY());
+      this.direccionLuna = createVector(this.planeta.getPosX()-this.luna.getPosX(), this.planeta.getPosY()-this.luna.getPosY());
       this.direccionLuna.normalize();
 
       this.star.setPosX(this.star.getPosX() + this.direccionLuna.x * 0.5);
@@ -187,15 +187,21 @@ class Logica {
 
     this.farol.pintarFarol();
     this.farolero.pintarFarolero();
-
+    if(this.validarPasos=true){
+     
+      this.principe.pasos(); 
+       }
     this.principe.pintarPrincipe();
     this.farolero.hablar();
 
 
     if(this.hablarPrincipe==true){
-      text("primero",this.principe.getPosX(),this.principe.getPosY());
+      this.principe.hablar();
+      
 
     }
+
+  
   }
 
 
@@ -300,6 +306,8 @@ class Logica {
     if (mouseX > this.principe.getPosX() + 100 && mouseY > this.principe.getPosY() && mouseX < this.principe.getPosX() + 200 && mouseY < this.principe.getPosY() + 100) {
       this.validarMovPrincipito = true;
       this.validarPrincipe = true;
+      this.validarPasos=true;
+      this.principe.setShowPasos(true);
     }
   
   }
@@ -339,36 +347,64 @@ class Logica {
 
     if (this.validarMovPrincipito == true &&mouseX > this.principe.getPosX() + 100 && mouseY > this.principe.getPosY() && mouseX < this.principe.getPosX() + 200 && mouseY < this.principe.getPosY() + 100) {
       this.validarMovPrincipito = false;
+      
+      
     }
       if (this.principe.getPosX() <= 100) {
         this.validarMovPrincipito = false;
+        this.hablarPrincipe=false;
         this.principe.setPosX(100);
         this.principe.setPosY(300);
+        this.principe.setShowPasos(false);
       }
 
       if (this.principe.getPosX()+100 >= 500) {
         this.validarMovPrincipito= false;
+        this.hablarPrincipe=false;
         this.principe.setPosX(100);
         this.principe.setPosY(300);
+        this.principe.setShowPasos(false);
      
       }
 
-      if (this.principe.getPosX() <= 300) {
+      if (this.principe.getPosX() + 100>250 && this.principe.getPosY() >200 ) {
         this.hablarPrincipe=true;
-        
+        this.principe.setPaso(0);
+      
+      }
+      if (this.principe.getPosX() + 100>300 && this.principe.getPosY() >200) {
+        this.hablarPrincipe=true;
+        this.principe.setPaso(1);
+      
+      }
+      if (this.principe.getPosX() + 100>400 && this.principe.getPosY() >200) {
+        this.hablarPrincipe=true;
+        this.principe.setPaso(2);
+      }
+      if (this.principe.getPosY()<=200) {
+        this.principe.setShowPasos(false);
+        this.hablarPrincipe=false;
+
       }
     
+     
 
     if (this.principe.getPosY()+100 >= 560) {
       this.validarMovPrincipito= false;
+      this.hablarPrincipe=false;
       this.principe.setPosX(100);
       this.principe.setPosY(300);
+      this.principe.setShowPasos(false);
    
     }
+
+
     if (this.principe.getPosY()+100 <= 160) {
+      this.hablarPrincipe=false;
       this.validarMovPrincipito= false;
       this.principe.setPosX(100);
       this.principe.setPosY(300);
+      this.principe.setShowPasos(false);
    
     }
 

@@ -81,9 +81,6 @@ class Farolero extends Personaje{
    
     
   }
-
-  // if(this.cambioHablar==true){
-  // }
  
 
   getCambioFarol(){

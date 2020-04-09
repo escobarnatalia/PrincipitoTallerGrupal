@@ -10,7 +10,7 @@ class Espacio{
     }
 
     movimiento(){
-        this.posX= mouseX-150;
+        this.posX= mouseX;
        
        
         this.posY=this.posY;

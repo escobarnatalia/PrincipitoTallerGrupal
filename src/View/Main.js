@@ -17,7 +17,7 @@ function setup() {
     sacramento = loadFont('./data/sacramento.ttf');
 
     mouse = loadImage('./imagenes/mouse.png');
-    screen = 1;
+    screen = 0;
     bg = loadImage('./imagenes/background.png');
     pantalla = new PantallaView();
     pantallaInicio = new PantallaUnoView();
